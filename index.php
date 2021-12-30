@@ -5,7 +5,7 @@
 <?php
 use DG\Twitter\Twitter;
 
-require_once '../twitter-php-master/src/twitter.class.php';
+require_once './twitter-php-master/src/twitter.class.php';
 require_once './config.php';
 
 // ENTER HERE YOUR CREDENTIALS (see readme.txt)
@@ -24,7 +24,7 @@ foreach ($lines as $line) {
 
 		<ul>
 		<?php foreach ($results as $status) { ?>
-			<li><a href="https://twitter.com/<?php echo $status->user->screen_name ?>"><img src="<?php echo htmlspecialchars($status->user->profile_image_url_https) ?>">
+			<li><a href="https://twitter.com/<?php echo $status->user->screen_name ?>"><img height="48px" width="48x" src="<?php echo htmlspecialchars($status->user->profile_image_url_https) ?>">
 				<?php echo htmlspecialchars($status->user->name) ?></a>:
 				<?php echo Twitter::clickable($status) ?>
 				<small>at <?php echo date('j.n.Y H:i', strtotime($status->created_at)) ?></small>
